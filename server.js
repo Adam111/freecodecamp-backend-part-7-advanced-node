@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('view engine', 'pug');
 
-mongo.connect(process.env.DATABASE, { useNewUrlParser: true, useUnifiedTopology: true }, (err, db) => {
+mongo.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, (err, db) => {
   if (err) {
     console.log('Database error: ' + err);
   } else {
@@ -27,14 +27,14 @@ mongo.connect(process.env.DATABASE, { useNewUrlParser: true, useUnifiedTopology:
     routes(app, db);
     
     // app.listen
-    app.listen(process.env.PORT || 3000, () => {
-      console.log("Listening on port " + process.env.PORT);
+    const listener = app.listen(process.env.PORT || 3000, () => {
+      console.log('Listening on port ' + listener.address().port);
     });
   }
 });
 
 // Enables to pass the challenge called "Advanced Node and Express - Registration of New Users"
-if (process.env.ENABLE_DELAYS) {
+if (process.env.ENABLE_DELAYS === 'true') {
   app.use((req, res, next) => {
     return setTimeout(() => next(), 500);
   });
