@@ -2,54 +2,58 @@ html
   head
     title freeCodeCamp - Advanced Node and Express
     meta(name='description', content='A cool thing made with HyperDev')
-    link#favicon(rel='icon', href='https://cdn.freecodecamp.org/universal/favicons/favicon.ico', type='image/x-icon')
+    link#favicon(rel='icon', href='/public/favicon.ico', type='image/x-icon')
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/public/style.css')
   body
-    h1.border.center freeCodeCamp - Advanced Node and Express
-    h1.border.center Home Page
-    h2.center#pug-success-message
-    | Looks like this page is being rendered from Pug into HTML!
-    | #{title}
-    p#pug-variable= message
-    
-    
-    
-    if showLogin
-      hr
-      p Login Form
-      form(action='/login', method='post')
-        div
-          label Username: 
-          input(type='text', name='username')
-        div
-          label Password: 
-          input(type='password', name='password')
-        div
-          input(type='submit', value='Log In')
-          
-    if showRegistration
-      hr
-      p Registration Form
-      form(action='/register', method='post')
-        div
-          label Username: 
-          input(type='text', name='username')
-        div
-          label Password: 
-          input(type='password', name='password')
-        div
-          input(type='submit', value='Register')
+    div.center
+      h1.border.center freeCodeCamp - Advanced Node and Express
+      h1.border.center Home Page
+      h2.center#pug-success-message
+      | Looks like this page is being rendered from Pug into HTML!
+      | #{title}
+      p#pug-variable= message
 
-    div.footer.text-center
-      | by 
-      a(href='https://www.freecodecamp.org', target='_blank') freeCodeCamp
-      |  &amp; 
-      a(href='https://www.freecodecamp.org/adam777', target='_blank') Adam
-      |  | 
-      a(href='https://github.com/Adam777Z/freecodecamp-backend-part-7-advanced-node-and-express', target='_blank') GitHub
 
-    script(src='https://code.jquery.com/jquery-2.2.1.min.js', integrity='sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=', crossorigin='anonymous')
-    script(src='/public/client.js')
+
+      if showLogin
+        hr
+        p Login Form
+        form(action='/login', method='post')
+          div
+            label Username:
+            input(type='text', name='username')
+          div
+            label Password:
+            input(type='password', name='password')
+          div
+            input(type='submit', value='Log In')
+
+      if showRegistration
+        hr
+        p Registration Form
+        form(action='/register', method='post')
+          div
+            label Username:
+            input(type='text', name='username')
+          div
+            label Password:
+            input(type='password', name='password')
+          div
+            input(type='submit', value='Register')
+
+      div.footer.text-center
+        | by
+        |
+        a(href='https://www.freecodecamp.org', target='_blank') freeCodeCamp
+        |  &amp;
+        |
+        a(href='https://www.freecodecamp.org/adam777', target='_blank') Adam
+        |  |
+        |
+        a(href='https://github.com/Adam777Z/freecodecamp-backend-part-7-advanced-node-and-express', target='_blank') GitHub
+
+      script(src='https://code.jquery.com/jquery-2.2.1.min.js', integrity='sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=', crossorigin='anonymous')
+      script(src='/public/client.js')
