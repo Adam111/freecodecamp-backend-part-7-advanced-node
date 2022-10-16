@@ -41,8 +41,10 @@ module.exports = function(app, db) {
   });
 
   app.get('/logout', (req, res) => {
-    req.logout();
-    res.redirect('/');
+    req.logout((err) => {
+      if (err) { return next(err); }
+      res.redirect('/');
+    });
   });
 
   app.get('/profile', ensureAuthenticated, (req, res) => {
