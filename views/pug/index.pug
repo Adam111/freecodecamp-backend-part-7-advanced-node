@@ -1,57 +1,55 @@
 html
-  head
-    title freeCodeCamp - Advanced Node and Express
-    meta(name='description', content='A cool thing')
-    link#favicon(rel='icon', href='/public/favicon.ico', type='image/x-icon')
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='stylesheet', href='/public/style.css')
-    //- script(src='/public/client.js')
-  body
-    div.center
-      h1.border.center freeCodeCamp - Advanced Node and Express
-      h1.border.center Home Page
-      h2.center#pug-success-message
-      | Looks like this page is being rendered from Pug into HTML!
-      | #{title}
-      p#pug-variable= message
+	head
+		title freeCodeCamp - Advanced Node and Express
+		meta(name='description', content='A cool thing')
+		link#favicon(rel='icon', href='/public/favicon.ico', type='image/x-icon')
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		link(rel='stylesheet', href='/public/style.css')
+		//- script(src='/public/client.js')
+	body
+		div.center
+			h1.border.center freeCodeCamp - Advanced Node and Express
+			h1.border.center Home Page
+			h2.center#pug-success-message
+			| Looks like this page is being rendered from Pug into HTML!
+			| #{title}
+			p#pug-variable= message
 
+			if showLogin
+				hr
+				p Login Form
+				form(action='/login', method='post')
+					div
+						label Username:
+						input(type='text', name='username')
+					div
+						label Password:
+						input(type='password', name='password')
+					div
+						input(type='submit', value='Log In')
 
+			if showRegistration
+				hr
+				p Registration Form
+				form(action='/register', method='post')
+					div
+						label Username:
+						input(type='text', name='username')
+					div
+						label Password:
+						input(type='password', name='password')
+					div
+						input(type='submit', value='Register')
 
-      if showLogin
-        hr
-        p Login Form
-        form(action='/login', method='post')
-          div
-            label Username:
-            input(type='text', name='username')
-          div
-            label Password:
-            input(type='password', name='password')
-          div
-            input(type='submit', value='Log In')
-
-      if showRegistration
-        hr
-        p Registration Form
-        form(action='/register', method='post')
-          div
-            label Username:
-            input(type='text', name='username')
-          div
-            label Password:
-            input(type='password', name='password')
-          div
-            input(type='submit', value='Register')
-
-      div.footer.text-center
-        | by
-        |
-        a(href='https://www.freecodecamp.org', target='_blank') freeCodeCamp
-        |  &amp;
-        |
-        a(href='https://www.freecodecamp.org/adam777', target='_blank') Adam
-        |  |
-        |
-        a(href='https://github.com/Adam777Z/freecodecamp-backend-part-7-advanced-node-and-express', target='_blank') GitHub
+		div.footer.text-center
+			| by
+			|
+			a(href='https://www.freecodecamp.org', target='_blank') freeCodeCamp
+			|  &amp;
+			|
+			a(href='https://www.freecodecamp.org/adam777', target='_blank') Adam
+			|  |
+			|
+			a(href='https://github.com/Adam777Z/freecodecamp-backend-part-7-advanced-node-and-express', target='_blank') GitHub
